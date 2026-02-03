@@ -1,0 +1,6 @@
+[0.000000] (-) TimerEvent: {}
+[0.000293] (-) JobUnselected: {'identifier': 'custom_msgs'}
+[0.000422] (turret_control) JobQueued: {'identifier': 'turret_control', 'dependencies': OrderedDict([('custom_msgs', '/home/alex/Desktop/2DOF-Turret/install/custom_msgs')])}
+[0.000437] (turret_control) JobStarted: {'identifier': 'turret_control'}
+[0.008600] (turret_control) JobEnded: {'identifier': 'turret_control', 'rc': 1}
+[0.018989] (-) EventReactorShutdown: {}

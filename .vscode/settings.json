@@ -1,0 +1,4 @@
+{
+    "cmake.sourceDirectory": "/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control",
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc"
+}

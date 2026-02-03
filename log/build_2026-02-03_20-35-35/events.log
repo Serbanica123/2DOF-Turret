@@ -1,0 +1,91 @@
+[0.000000] (-) TimerEvent: {}
+[0.000371] (-) JobUnselected: {'identifier': 'custom_msgs'}
+[0.000394] (turret_control) JobQueued: {'identifier': 'turret_control', 'dependencies': OrderedDict([('custom_msgs', '/home/alex/Desktop/2DOF-Turret/install/custom_msgs')])}
+[0.000411] (turret_control) JobStarted: {'identifier': 'turret_control'}
+[0.007315] (turret_control) JobProgress: {'identifier': 'turret_control', 'progress': 'cmake'}
+[0.008217] (turret_control) JobProgress: {'identifier': 'turret_control', 'progress': 'build'}
+[0.008763] (turret_control) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/alex/Desktop/2DOF-Turret/build/turret_control', '--', '-j16', '-l16'], 'cwd': '/home/alex/Desktop/2DOF-Turret/build/turret_control', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('PYTHON_BASIC_REPL', '1'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('CONDA_PROMPT_MODIFIER', '(base)'), ('USER', 'alex'), ('LC_TIME', 'ro_RO.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/alex'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '1'), ('TERM_PROGRAM_VERSION', '1.105.1'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'ro_RO.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('MANAGERPID', '1172'), ('SYSTEMD_EXEC_PID', '1516'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('_CONDA_ROOT', '/home/alex/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '4135'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'alex'), ('ONSHAPE_SECRET_KEY', 'e9hXQwE3NhCL1oMxSmSRNBLu7HQLUFzauyX8eHJYXcba6KX1'), ('JOURNAL_STREAM', '8:8455'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'alex'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/alex/.local/bin:/home/alex/miniconda3/bin:/home/alex/miniconda3/condabin:/opt/ros/humble/bin:/home/alex/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/alex/.config/Code/User/globalStorage/github.copilot-chat/debugCommand'), ('SESSION_MANAGER', 'local/alex-B560M-D3H:@/tmp/.ICE-unix/1489,unix/alex-B560M-D3H:/tmp/.ICE-unix/1489'), ('INVOCATION_ID', 'b6e1caab1869418d9a791bf6b37ef9c1'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'ro_RO.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('PYTHONSTARTUP', '/home/alex/.config/Code/User/workspaceStorage/dc676d295f84b4e105d34a88b4a63ac8/ms-python.python/pythonrc.py'), ('LC_TELEPHONE', 'ro_RO.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-9689876352.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/alex/miniconda3/bin/python'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('LC_NAME', 'ro_RO.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CONDA_DEFAULT_ENV', 'base'), ('LC_MEASUREMENT', 'ro_RO.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/alex/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'ro_RO.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/alex/Desktop/2DOF-Turret/build/turret_control'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('ONSHAPE_ACCESS_KEY', 'on_BmfS2Q6JZnXFEimvcqniP'), ('CONDA_EXE', '/home/alex/miniconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'ro_RO.UTF-8'), ('CONDA_PREFIX', '/home/alex/miniconda3'), ('LC_PAPER', 'ro_RO.UTF-8'), ('ONSHAPE_API', 'https://cad.onshape.com'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble:/opt/ros/humble:')]), 'shell': False}
+[0.027009] (turret_control) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099881] (-) TimerEvent: {}
+[0.104168] (turret_control) StdoutLine: {'line': b'-- Found rclcpp: 16.0.17 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.120454] (turret_control) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.122036] (turret_control) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.125520] (turret_control) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.130771] (turret_control) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.138031] (turret_control) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.156356] (turret_control) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.157235] (turret_control) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.199991] (-) TimerEvent: {}
+[0.218034] (turret_control) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.245462] (turret_control) StdoutLine: {'line': b'-- Found custom_msgs: 0.0.0 (/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/custom_msgs/share/custom_msgs/cmake)\n'}
+[0.250254] (turret_control) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[0.297974] (turret_control) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.300036] (-) TimerEvent: {}
+[0.305989] (turret_control) StdoutLine: {'line': b'-- Generating done\n'}
+[0.308197] (turret_control) StdoutLine: {'line': b'-- Build files have been written to: /home/alex/Desktop/2DOF-Turret/build/turret_control\n'}
+[0.324625] (turret_control) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target position_controller\x1b[0m\n'}
+[0.337190] (turret_control) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/position_controller.dir/src/position_controller.cpp.o\x1b[0m\n'}
+[0.337319] (turret_control) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/position_controller.dir/src/jsonRead.cpp.o\x1b[0m\n'}
+[0.337450] (turret_control) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/position_controller.dir/src/Control.cpp.o\x1b[0m\n'}
+[0.400131] (-) TimerEvent: {}
+[0.500405] (-) TimerEvent: {}
+[0.600757] (-) TimerEvent: {}
+[0.701367] (-) TimerEvent: {}
+[0.801947] (-) TimerEvent: {}
+[0.902443] (-) TimerEvent: {}
+[1.002738] (-) TimerEvent: {}
+[1.103016] (-) TimerEvent: {}
+[1.203246] (-) TimerEvent: {}
+[1.303479] (-) TimerEvent: {}
+[1.403745] (-) TimerEvent: {}
+[1.503989] (-) TimerEvent: {}
+[1.604251] (-) TimerEvent: {}
+[1.704526] (-) TimerEvent: {}
+[1.804727] (-) TimerEvent: {}
+[1.817018] (turret_control) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Core:164\x1b[m\x1b[K,\n'}
+[1.817182] (turret_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/eigen3/Eigen/Dense:1\x1b[m\x1b[K,\n'}
+[1.817222] (turret_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/JsonRead.h:6\x1b[m\x1b[K,\n'}
+[1.817256] (turret_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:3\x1b[m\x1b[K,\n'}
+[1.817287] (turret_control) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:1\x1b[m\x1b[K:\n'}
+[1.817319] (turret_control) StderrLine: {'line': b'/usr/include/eigen3/Eigen/src/Core/Matrix.h: In instantiation of \xe2\x80\x98\x1b[01m\x1b[KEigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Matrix(const Scalar&, const Scalar&, const Scalar&, const Scalar&) [with _Scalar = double; int _Rows = -1; int _Cols = 1; int _Options = 0; int _MaxRows = -1; int _MaxCols = 1; Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Scalar = double]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.817354] (turret_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:15:33:\x1b[m\x1b[K   required from here\n'}
+[1.817385] (turret_control) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:404:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kstatic assertion failed: THIS_METHOD_IS_ONLY_FOR_VECTORS_OF_A_SPECIFIC_SIZE\n'}
+[1.817417] (turret_control) StderrLine: {'line': b'  404 |       \x1b[01;31m\x1b[KE\x1b[m\x1b[KIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(Matrix, 4)\n'}
+[1.817448] (turret_control) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[1.817477] (turret_control) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:404:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K(((int)Eigen::Matrix<double, -1, 1>::SizeAtCompileTime) == 4)\x1b[m\x1b[K\xe2\x80\x99 evaluates to false\n'}
+[1.904819] (-) TimerEvent: {}
+[1.911332] (turret_control) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/position_controller.dir/build.make:104: CMakeFiles/position_controller.dir/src/Control.cpp.o] Error 1\n'}
+[1.911491] (turret_control) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[2.004908] (-) TimerEvent: {}
+[2.105165] (-) TimerEvent: {}
+[2.205406] (-) TimerEvent: {}
+[2.305745] (-) TimerEvent: {}
+[2.406012] (-) TimerEvent: {}
+[2.506259] (-) TimerEvent: {}
+[2.606520] (-) TimerEvent: {}
+[2.706788] (-) TimerEvent: {}
+[2.766682] (turret_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/position_controller.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kint main(int, char**)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.766898] (turret_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/position_controller.cpp:49:14:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kargc\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.766947] (turret_control) StderrLine: {'line': b'   49 | int main(\x1b[01;35m\x1b[Kint argc\x1b[m\x1b[K, char **argv)\n'}
+[2.766980] (turret_control) StderrLine: {'line': b'      |          \x1b[01;35m\x1b[K~~~~^~~~\x1b[m\x1b[K\n'}
+[2.767009] (turret_control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/position_controller.cpp:49:27:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kargv\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[2.767043] (turret_control) StderrLine: {'line': b'   49 | int main(int argc, \x1b[01;35m\x1b[Kchar **argv\x1b[m\x1b[K)\n'}
+[2.767073] (turret_control) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K~~~~~~~^~~~\x1b[m\x1b[K\n'}
+[2.806888] (-) TimerEvent: {}
+[2.907164] (-) TimerEvent: {}
+[3.007423] (-) TimerEvent: {}
+[3.107690] (-) TimerEvent: {}
+[3.208001] (-) TimerEvent: {}
+[3.308261] (-) TimerEvent: {}
+[3.408522] (-) TimerEvent: {}
+[3.508822] (-) TimerEvent: {}
+[3.609084] (-) TimerEvent: {}
+[3.709345] (-) TimerEvent: {}
+[3.809603] (-) TimerEvent: {}
+[3.909885] (-) TimerEvent: {}
+[4.010141] (-) TimerEvent: {}
+[4.080616] (turret_control) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/position_controller.dir/all] Error 2\n'}
+[4.080917] (turret_control) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[4.082083] (turret_control) CommandEnded: {'returncode': 2}
+[4.092269] (turret_control) JobEnded: {'identifier': 'turret_control', 'rc': 2}
+[4.102678] (-) EventReactorShutdown: {}

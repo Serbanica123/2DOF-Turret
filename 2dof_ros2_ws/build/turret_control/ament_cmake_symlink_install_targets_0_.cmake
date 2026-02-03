@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/build/turret_control/position_controller" "TARGETS" "position_controller" "DESTINATION" "lib/turret_control")

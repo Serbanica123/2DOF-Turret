@@ -1,0 +1,14 @@
+[0.006s] Invoking command in '/home/alex/Desktop/2DOF-Turret/build/turret_control': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/alex/Desktop/2DOF-Turret/build/turret_control -- -j16 -l16
+[0.031s] [35m[1mConsolidate compiler generated dependencies of target position_controller[0m
+[0.049s] [ 25%] [32mBuilding CXX object CMakeFiles/position_controller.dir/src/Control.cpp.o[0m
+[0.726s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:[m[K In constructor ‘[01m[KObserver::Observer()[m[K’:
+[0.726s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:19:26:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kstd[m[K’
+[0.727s]    19 |     std::cout << "Test\n"
+[0.727s]       |                          [01;31m[K^[m[K
+[0.727s]       |                          [32m[K;[m[K
+[0.727s]    20 |     [32m[Kstd[m[K::cout << x_hat<< "\n";
+[0.727s]       |     [32m[K~~~[m[K                   
+[0.814s] gmake[2]: *** [CMakeFiles/position_controller.dir/build.make:104: CMakeFiles/position_controller.dir/src/Control.cpp.o] Error 1
+[0.814s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/position_controller.dir/all] Error 2
+[0.814s] gmake: *** [Makefile:146: all] Error 2
+[0.815s] Invoked command in '/home/alex/Desktop/2DOF-Turret/build/turret_control' returned '2': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/alex/Desktop/2DOF-Turret/build/turret_control -- -j16 -l16

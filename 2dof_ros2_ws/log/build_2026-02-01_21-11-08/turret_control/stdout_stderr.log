@@ -1,0 +1,30 @@
+[35m[1mConsolidate compiler generated dependencies of target position_controller[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/position_controller.dir/src/Control.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/position_controller.dir/src/position_controller.cpp.o[0m
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/position_controller.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/position_controller.cpp:49:14:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargc[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   49 | int main([01;35m[Kint argc[m[K, char **argv)
+      |          [01;35m[K~~~~^~~~[m[K
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/position_controller.cpp:49:27:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargv[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   49 | int main(int argc, [01;35m[Kchar **argv[m[K)
+      |                    [01;35m[K~~~~~~~^~~~[m[K
+[ 75%] [32m[1mLinking CXX executable position_controller[0m
+[100%] Built target position_controller
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/lib/turret_control/position_controller
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/ament_index/resource_index/package_run_dependencies/turret_control
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/ament_index/resource_index/parent_prefix_path/turret_control
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/environment/path.sh
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/environment/path.dsv
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/local_setup.bash
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/local_setup.sh
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/local_setup.zsh
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/local_setup.dsv
+-- Symlinking: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/package.dsv
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/ament_index/resource_index/packages/turret_control
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/cmake/turret_controlConfig.cmake
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/cmake/turret_controlConfig-version.cmake
+-- Up-to-date symlink: /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/package.xml

@@ -1,0 +1,6 @@
+Invoking command in '/home/alex/Desktop/2DOF-Turret/build/turret_control': /usr/bin/cmake /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control -DCMAKE_INSTALL_PREFIX=/home/alex/Desktop/2DOF-Turret/install/turret_control
+Invoked command in '/home/alex/Desktop/2DOF-Turret/build/turret_control' returned '0': /usr/bin/cmake /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control -DCMAKE_INSTALL_PREFIX=/home/alex/Desktop/2DOF-Turret/install/turret_control
+Invoking command in '/home/alex/Desktop/2DOF-Turret/build/turret_control': /usr/bin/cmake --build /home/alex/Desktop/2DOF-Turret/build/turret_control -- -j16 -l16
+Invoked command in '/home/alex/Desktop/2DOF-Turret/build/turret_control' returned '0': /usr/bin/cmake --build /home/alex/Desktop/2DOF-Turret/build/turret_control -- -j16 -l16
+Invoking command in '/home/alex/Desktop/2DOF-Turret/build/turret_control': /usr/bin/cmake --install /home/alex/Desktop/2DOF-Turret/build/turret_control
+Invoked command in '/home/alex/Desktop/2DOF-Turret/build/turret_control' returned '0': /usr/bin/cmake --install /home/alex/Desktop/2DOF-Turret/build/turret_control

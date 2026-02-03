@@ -1,0 +1,4 @@
+Invoking command in '/home/alex/Desktop/2DOF-Turret/build/turret_control': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/alex/Desktop/2DOF-Turret/build/turret_control -- -j16 -l16
+Invoked command in '/home/alex/Desktop/2DOF-Turret/build/turret_control' returned '0': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/alex/Desktop/2DOF-Turret/build/turret_control -- -j16 -l16
+Invoking command in '/home/alex/Desktop/2DOF-Turret/build/turret_control': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/alex/Desktop/2DOF-Turret/build/turret_control
+Invoked command in '/home/alex/Desktop/2DOF-Turret/build/turret_control' returned '0': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/alex/Desktop/2DOF-Turret/build/turret_control

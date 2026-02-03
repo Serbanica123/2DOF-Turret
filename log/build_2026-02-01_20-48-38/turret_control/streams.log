@@ -1,0 +1,76 @@
+[0.008s] Invoking command in '/home/alex/Desktop/2DOF-Turret/build/turret_control': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/alex/Desktop/2DOF-Turret/build/turret_control -- -j16 -l16
+[0.040s] [35m[1mConsolidate compiler generated dependencies of target position_controller[0m
+[0.053s] [ 50%] [32mBuilding CXX object CMakeFiles/position_controller.dir/src/Control.cpp.o[0m
+[0.053s] [ 50%] [32mBuilding CXX object CMakeFiles/position_controller.dir/src/position_controller.cpp.o[0m
+[1.721s] In file included from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:1[m[K:
+[1.721s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:[m[K In constructor ‘[01m[KStateSpace::StateSpace()[m[K’:
+[1.721s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:7:15:[m[K [01;35m[Kwarning: [m[K‘[01m[KStateSpace::n[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[1.721s]     7 |     size_t m, [01;35m[Kn[m[K, p;
+[1.721s]       |               [01;35m[K^[m[K
+[1.721s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:7:12:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Ksize_t StateSpace::m[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[1.721s]     7 |     size_t [01;35m[Km[m[K, n, p;
+[1.721s]       |            [01;35m[K^[m[K
+[1.721s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:15:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[1.721s]    15 |     [01;35m[KStateSpace[m[K():n(0), m(0), p(0), dt(0.0)
+[1.721s]       |     [01;35m[K^~~~~~~~~~[m[K
+[1.721s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:[m[K In constructor ‘[01m[KStateSpace::StateSpace(size_t, size_t, size_t, double, const MatrixXd&, const MatrixXd&, const MatrixXd&, const MatrixXd&)[m[K’:
+[1.721s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:7:15:[m[K [01;35m[Kwarning: [m[K‘[01m[KStateSpace::n[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[1.721s]     7 |     size_t m, [01;35m[Kn[m[K, p;
+[1.721s]       |               [01;35m[K^[m[K
+[1.721s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:7:12:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Ksize_t StateSpace::m[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[1.721s]     7 |     size_t [01;35m[Km[m[K, n, p;
+[1.721s]       |            [01;35m[K^[m[K
+[1.721s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:23:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[1.721s]    23 |     [01;35m[KStateSpace[m[K(const size_t n_, const size_t m_, const size_t p_, const double dt_, const Eigen::MatrixXd &A_, const Eigen::MatrixXd &B_, const Eigen::MatrixXd &C_, const Eigen::MatrixXd &D_)
+[1.721s]       |     [01;35m[K^~~~~~~~~~[m[K
+[2.820s] In file included from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/position_controller.cpp:11[m[K:
+[2.820s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:[m[K In constructor ‘[01m[KStateSpace::StateSpace()[m[K’:
+[2.820s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:7:15:[m[K [01;35m[Kwarning: [m[K‘[01m[KStateSpace::n[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.820s]     7 |     size_t m, [01;35m[Kn[m[K, p;
+[2.820s]       |               [01;35m[K^[m[K
+[2.820s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:7:12:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Ksize_t StateSpace::m[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.820s]     7 |     size_t [01;35m[Km[m[K, n, p;
+[2.820s]       |            [01;35m[K^[m[K
+[2.820s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:15:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.820s]    15 |     [01;35m[KStateSpace[m[K():n(0), m(0), p(0), dt(0.0)
+[2.820s]       |     [01;35m[K^~~~~~~~~~[m[K
+[2.821s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:[m[K In constructor ‘[01m[KStateSpace::StateSpace(size_t, size_t, size_t, double, const MatrixXd&, const MatrixXd&, const MatrixXd&, const MatrixXd&)[m[K’:
+[2.821s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:7:15:[m[K [01;35m[Kwarning: [m[K‘[01m[KStateSpace::n[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.821s]     7 |     size_t m, [01;35m[Kn[m[K, p;
+[2.821s]       |               [01;35m[K^[m[K
+[2.821s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:7:12:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Ksize_t StateSpace::m[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.821s]     7 |     size_t [01;35m[Km[m[K, n, p;
+[2.821s]       |            [01;35m[K^[m[K
+[2.821s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:23:5:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[2.821s]    23 |     [01;35m[KStateSpace[m[K(const size_t n_, const size_t m_, const size_t p_, const double dt_, const Eigen::MatrixXd &A_, const Eigen::MatrixXd &B_, const Eigen::MatrixXd &C_, const Eigen::MatrixXd &D_)
+[2.821s]       |     [01;35m[K^~~~~~~~~~[m[K
+[2.895s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/position_controller.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[2.895s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/position_controller.cpp:49:14:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargc[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.895s]    49 | int main([01;35m[Kint argc[m[K, char **argv)
+[2.895s]       |          [01;35m[K~~~~^~~~[m[K
+[2.895s] [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/position_controller.cpp:49:27:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargv[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[2.895s]    49 | int main(int argc, [01;35m[Kchar **argv[m[K)
+[2.895s]       |                    [01;35m[K~~~~~~~^~~~[m[K
+[4.223s] [ 75%] [32m[1mLinking CXX executable position_controller[0m
+[4.369s] [100%] Built target position_controller
+[4.376s] Invoked command in '/home/alex/Desktop/2DOF-Turret/build/turret_control' returned '0': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/alex/Desktop/2DOF-Turret/build/turret_control -- -j16 -l16
+[4.382s] Invoking command in '/home/alex/Desktop/2DOF-Turret/build/turret_control': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/alex/Desktop/2DOF-Turret/build/turret_control
+[4.386s] -- Install configuration: ""
+[4.387s] -- Installing: /home/alex/Desktop/2DOF-Turret/install/turret_control/lib/turret_control/position_controller
+[4.387s] -- Set runtime path of "/home/alex/Desktop/2DOF-Turret/install/turret_control/lib/turret_control/position_controller" to ""
+[4.387s] -- Up-to-date: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/ament_index/resource_index/package_run_dependencies/turret_control
+[4.387s] -- Up-to-date: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/ament_index/resource_index/parent_prefix_path/turret_control
+[4.387s] -- Up-to-date: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/turret_control/environment/ament_prefix_path.sh
+[4.388s] -- Up-to-date: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/turret_control/environment/ament_prefix_path.dsv
+[4.388s] -- Up-to-date: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/turret_control/environment/path.sh
+[4.388s] -- Up-to-date: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/turret_control/environment/path.dsv
+[4.388s] -- Up-to-date: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/turret_control/local_setup.bash
+[4.388s] -- Up-to-date: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/turret_control/local_setup.sh
+[4.388s] -- Up-to-date: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/turret_control/local_setup.zsh
+[4.388s] -- Up-to-date: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/turret_control/local_setup.dsv
+[4.388s] -- Installing: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/turret_control/package.dsv
+[4.388s] -- Up-to-date: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/ament_index/resource_index/packages/turret_control
+[4.388s] -- Up-to-date: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/turret_control/cmake/turret_controlConfig.cmake
+[4.388s] -- Up-to-date: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/turret_control/cmake/turret_controlConfig-version.cmake
+[4.388s] -- Up-to-date: /home/alex/Desktop/2DOF-Turret/install/turret_control/share/turret_control/package.xml
+[4.389s] Invoked command in '/home/alex/Desktop/2DOF-Turret/build/turret_control' returned '0': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/alex/Desktop/2DOF-Turret/build/turret_control

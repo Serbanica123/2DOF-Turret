@@ -1,0 +1,16 @@
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/lib/turret_control/position_controller
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/ament_index/resource_index/package_run_dependencies/turret_control
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/ament_index/resource_index/parent_prefix_path/turret_control
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/environment/ament_prefix_path.sh
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/environment/ament_prefix_path.dsv
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/environment/path.sh
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/environment/path.dsv
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/local_setup.bash
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/local_setup.sh
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/local_setup.zsh
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/local_setup.dsv
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/package.dsv
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/ament_index/resource_index/packages/turret_control
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/cmake/turret_controlConfig.cmake
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/cmake/turret_controlConfig-version.cmake
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/package.xml

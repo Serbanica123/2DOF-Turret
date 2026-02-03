@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "ROS2 Humble",
+            "compileCommands": [
+                "${workspaceFolder}/build/compile_commands.json"
+            ],
+            "intelliSenseMode": "linux-gcc-x64",
+            "includePath": [
+                "${default}",
+                "${workspaceFolder}/2dof_ros2_ws/src/turret_control/include"
+            ]
+        }
+    ],
+    "version": 4
+}

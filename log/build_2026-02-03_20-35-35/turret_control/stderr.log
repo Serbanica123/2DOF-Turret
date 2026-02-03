@@ -1,0 +1,22 @@
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:164[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/JsonRead.h:6[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:3[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:1[m[K:
+/usr/include/eigen3/Eigen/src/Core/Matrix.h: In instantiation of ‘[01m[KEigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Matrix(const Scalar&, const Scalar&, const Scalar&, const Scalar&) [with _Scalar = double; int _Rows = -1; int _Cols = 1; int _Options = 0; int _MaxRows = -1; int _MaxCols = 1; Eigen::Matrix<_Scalar, _Rows, _Cols, _Options, _MaxRows, _MaxCols>::Scalar = double][m[K’:
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:15:33:[m[K   required from here
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:404:7:[m[K [01;31m[Kerror: [m[Kstatic assertion failed: THIS_METHOD_IS_ONLY_FOR_VECTORS_OF_A_SPECIFIC_SIZE
+  404 |       [01;31m[KE[m[KIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(Matrix, 4)
+      |       [01;31m[K^[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:404:7:[m[K [01;36m[Knote: [m[K‘[01m[K(((int)Eigen::Matrix<double, -1, 1>::SizeAtCompileTime) == 4)[m[K’ evaluates to false
+gmake[2]: *** [CMakeFiles/position_controller.dir/build.make:104: CMakeFiles/position_controller.dir/src/Control.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/position_controller.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/position_controller.cpp:49:14:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargc[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   49 | int main([01;35m[Kint argc[m[K, char **argv)
+      |          [01;35m[K~~~~^~~~[m[K
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/position_controller.cpp:49:27:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargv[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   49 | int main(int argc, [01;35m[Kchar **argv[m[K)
+      |                    [01;35m[K~~~~~~~^~~~[m[K
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/position_controller.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
