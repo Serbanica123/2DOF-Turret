@@ -1,6 +1,6 @@
 #include "turret_control/Control.h"
 
-Observer::Observer(StateSpace &ss_ref, std::shared_ptr<jsonRead> config) : ss(ss_ref), configReader(config)
+Observer::Observer(std::shared_ptr<jsonRead> config, StateSpace &ss_ref) : configReader(config), ss(ss_ref)
 {
     this->L = configReader->readMatrix({"observer", "L"});
 
@@ -30,23 +30,54 @@ TurretController::TurretController(const char *docName)
                  configReader->readMatrix({"model", "B"}),
                  configReader->readMatrix({"model", "C"}),
                  configReader->readMatrix({"model", "D"}));
-    observer = std::make_unique<Observer>(ss, configReader);
-    lqr = std::make_unique<LQR>(ss, configReader);
+    observer = std::make_unique<Observer>(configReader, ss);
+    lqr = std::make_unique<LQR>(configReader, ss);
+    u_prev.setZero(ss.m);
 }
 
-void TurretController::run()
+TurretController::TurretController()
 {
-Eigen::VectorXd y1;
-  Eigen::VectorXd y2;
-  Eigen::VectorXd u;
-  y1.setZero(2);
-  u.resize(2);
-  u<< 10,10;
-
-  std::cout << observer->estimate(u, y1) << "\n";
-  std::cout << observer->estimate(u, y1) << "\n";
+}
+Eigen::VectorXd TurretController::run(const Eigen::VectorXd &y)
+{
+    Eigen::VectorXd x_hat = observer->estimate(u_prev, y);
+    Eigen::VectorXd u = lqr->computeControls(x_hat);
+    u_prev = u;
+    return u;
 }
 
-LQR::LQR(StateSpace &ss_ref, std::shared_ptr<jsonRead> config)
+LQR::LQR(std::shared_ptr<jsonRead> config, StateSpace &ss_ref) : configReader(config), ss(ss_ref)
 {
+    this->x_ss.setZero(ss.n);
+    this->u_ss.setZero(ss.m);
+    this->K = configReader->readMatrix({"lqr", "k"});
+}
+
+void LQR::updateReference(const Eigen::VectorXd &r)
+{
+    Eigen::MatrixXd M(ss.n + ss.p, ss.n + ss.m);
+    Eigen::VectorXd rhs(ss.n + ss.p);
+
+    M << Eigen::MatrixXd::Identity(ss.n, ss.n) - ss.A, -ss.B,
+        ss.C, Eigen::MatrixXd::Zero(ss.p, ss.m);
+    rhs << Eigen::VectorXd::Zero(ss.n), r;
+
+    Eigen::VectorXd sol = M.fullPivLu().solve(rhs);
+    x_ss = sol.head(ss.n);
+    u_ss = sol.tail(ss.m);
+}
+
+Eigen::VectorXd LQR::computeControls(const Eigen::VectorXd &x_hat)
+{
+    return u_ss - K*(x_hat - x_ss);
+}
+
+double TurretController::getDt()
+{
+    return ss.dt;
+}
+
+int TurretController::getOutputNum()
+{
+    return ss.p;
 }

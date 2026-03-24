@@ -27,6 +27,7 @@ jsonRead::jsonRead(const char *docName)
 
 jsonRead::~jsonRead()
 {
+	std::cout<< "Config Destroyed\n";
 }
 
 double jsonRead::readDouble(const std::vector<std::string> &path)

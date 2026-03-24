@@ -1,0 +1,83 @@
+In file included from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:1[m[K:
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:[m[K In constructor ‘[01m[KObserver::Observer(std::shared_ptr<jsonRead>, StateSpace&)[m[K’:
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:77:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KObserver::ss[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   77 |     StateSpace &[01;35m[Kss[m[K;
+      |                 [01;35m[K^~[m[K
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:75:31:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kstd::shared_ptr<jsonRead> Observer::configReader[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   75 |     std::shared_ptr<jsonRead> [01;35m[KconfigReader[m[K;
+      |                               [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:3:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+    3 | [01;35m[KObserver[m[K::Observer(std::shared_ptr<jsonRead> config, StateSpace &ss_ref) : ss(ss_ref), configReader(config)
+      | [01;35m[K^~~~~~~~[m[K
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:[m[K In member function ‘[01m[KEigen::VectorXd& Observer::estimate(const VectorXd&, const VectorXd&)[m[K’:
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:13:18:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[KEigen::EigenBase<Eigen::Matrix<double, -1, 1> >::Index[m[K’ {aka ‘[01m[Klong int[m[K’} and ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   13 |     if ([01;35m[Ku.size() != ss.m[m[K || y.size() != ss.p)
+      |         [01;35m[K~~~~~~~~~^~~~~~~[m[K
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:13:38:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[KEigen::EigenBase<Eigen::Matrix<double, -1, 1> >::Index[m[K’ {aka ‘[01m[Klong int[m[K’} and ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   13 |     if (u.size() != ss.m || [01;35m[Ky.size() != ss.p[m[K)
+      |                             [01;35m[K~~~~~~~~~^~~~~~~[m[K
+In file included from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:1[m[K:
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:[m[K In constructor ‘[01m[KLQR::LQR(std::shared_ptr<jsonRead>, StateSpace&)[m[K’:
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:91:17:[m[K [01;35m[Kwarning: [m[K‘[01m[KLQR::ss[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   91 |     StateSpace &[01;35m[Kss[m[K;
+      |                 [01;35m[K^~[m[K
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:90:31:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kstd::shared_ptr<jsonRead> LQR::configReader[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   90 |     std::shared_ptr<jsonRead> [01;35m[KconfigReader[m[K;
+      |                               [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:46:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   46 | [01;35m[KLQR[m[K::LQR(std::shared_ptr<jsonRead> config, StateSpace &ss_ref) : ss(ss_ref), configReader(config)
+      | [01;35m[K^~~[m[K
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/rapidjson/allocators.h:21[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/rapidjson/reader.h:20[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/rapidjson/document.h:20[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/JsonRead.h:5[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:3[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:1[m[K:
+/usr/include/c++/11/bits/unique_ptr.h: In instantiation of ‘[01m[Ktypename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...) [with _Tp = Observer; _Args = {StateSpace&, std::shared_ptr<jsonRead>&}; typename std::_MakeUniq<_Tp>::__single_object = std::unique_ptr<Observer>][m[K’:
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:33:42:[m[K   required from here
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:962:30:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KObserver::Observer(StateSpace&, std::shared_ptr<jsonRead>&)[m[K’
+  962 |     { return unique_ptr<_Tp>([01;31m[Knew _Tp(std::forward<_Args>(__args)...)[m[K); }
+      |                              [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:3:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KObserver::Observer(std::shared_ptr<jsonRead>, StateSpace&)[m[K’
+    3 | [01;36m[KObserver[m[K::Observer(std::shared_ptr<jsonRead> config, StateSpace &ss_ref) : ss(ss_ref), configReader(config)
+      | [01;36m[K^~~~~~~~[m[K
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:3:46:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KStateSpace[m[K’ to ‘[01m[Kstd::shared_ptr<jsonRead>[m[K’
+    3 | Observer::Observer([01;36m[Kstd::shared_ptr<jsonRead> config[m[K, StateSpace &ss_ref) : ss(ss_ref), configReader(config)
+      |                    [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+In file included from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:1[m[K:
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:68:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KObserver::Observer(const Observer&)[m[K’
+   68 | class [01;36m[KObserver[m[K
+      |       [01;36m[K^~~~~~~~[m[K
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:68:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:68:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KObserver::Observer(Observer&&)[m[K’
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:68:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/rapidjson/allocators.h:21[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/rapidjson/reader.h:20[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/rapidjson/document.h:20[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/JsonRead.h:5[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:3[m[K,
+                 from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:1[m[K:
+/usr/include/c++/11/bits/unique_ptr.h: In instantiation of ‘[01m[Ktypename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...) [with _Tp = LQR; _Args = {StateSpace&, std::shared_ptr<jsonRead>&}; typename std::_MakeUniq<_Tp>::__single_object = std::unique_ptr<LQR>][m[K’:
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:34:32:[m[K   required from here
+[01m[K/usr/include/c++/11/bits/unique_ptr.h:962:30:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KLQR::LQR(StateSpace&, std::shared_ptr<jsonRead>&)[m[K’
+  962 |     { return unique_ptr<_Tp>([01;31m[Knew _Tp(std::forward<_Args>(__args)...)[m[K); }
+      |                              [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:46:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KLQR::LQR(std::shared_ptr<jsonRead>, StateSpace&)[m[K’
+   46 | [01;36m[KLQR[m[K::LQR(std::shared_ptr<jsonRead> config, StateSpace &ss_ref) : ss(ss_ref), configReader(config)
+      | [01;36m[K^~~[m[K
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:46:36:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[KStateSpace[m[K’ to ‘[01m[Kstd::shared_ptr<jsonRead>[m[K’
+   46 | LQR::LQR([01;36m[Kstd::shared_ptr<jsonRead> config[m[K, StateSpace &ss_ref) : ss(ss_ref), configReader(config)
+      |          [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+In file included from [01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/src/Control.cpp:1[m[K:
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:82:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KLQR::LQR(const LQR&)[m[K’
+   82 | class [01;36m[KLQR[m[K
+      |       [01;36m[K^~~[m[K
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:82:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:82:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KLQR::LQR(LQR&&)[m[K’
+[01m[K/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/turret_control/Control.h:82:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 2 provided
+gmake[2]: *** [CMakeFiles/position_controller.dir/build.make:104: CMakeFiles/position_controller.dir/src/Control.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/position_controller.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -332,7 +332,7 @@ ament_index_cpp_DIR:PATH=/opt/ros/humble/share/ament_index_cpp/cmake
 builtin_interfaces_DIR:PATH=/opt/ros/humble/share/builtin_interfaces/cmake
 
 //The directory containing a CMake configuration file for custom_msgs.
-custom_msgs_DIR:PATH=/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/custom_msgs/share/custom_msgs/cmake
+custom_msgs_DIR:PATH=/home/alex/Desktop/2DOF-Turret/install/custom_msgs/share/custom_msgs/cmake
 
 //The directory containing a CMake configuration file for fastcdr.
 fastcdr_DIR:PATH=/opt/ros/humble/lib/cmake/fastcdr
