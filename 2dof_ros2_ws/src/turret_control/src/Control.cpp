@@ -1,5 +1,6 @@
 #include "turret_control/Control.h"
 
+
 Observer::Observer(std::shared_ptr<jsonRead> config, StateSpace &ss_ref) : configReader(config), ss(ss_ref)
 {
     this->L = configReader->readMatrix({"observer", "L"});
@@ -80,4 +81,9 @@ double TurretController::getDt()
 int TurretController::getOutputNum()
 {
     return ss.p;
+}
+
+void TurretController::updateReference(const Eigen::VectorXd &r)
+{
+    lqr->updateReference(r);
 }

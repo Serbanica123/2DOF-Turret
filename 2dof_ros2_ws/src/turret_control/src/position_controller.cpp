@@ -15,49 +15,60 @@ class TurretControlNode : public rclcpp::Node
 public:
   TurretControlNode() : Node("turret_control")
   {
-    controler= std::make_unique<TurretController>("/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/lqr_observer_config.json");
-    reference.setZero(controler->getOutputNum());
+    controller = std::make_unique<TurretController>("/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/lqr_observer_config.json");
+    r.setZero(controller->getOutputNum());
+    y.setZero(controller->getOutputNum());
+    first_state_received = false;
     state_subscription_ = this->create_subscription<std_msgs::msg::Float32MultiArray>("turret/state", 10, std::bind(&TurretControlNode::state_callback, this, std::placeholders::_1));
+    cmd_subscription = this->create_subscription<custom_msgs::msg::TurretCmd>("turret/cmd_setpoint", 10, std::bind(&TurretControlNode::cmd_callback, this, std::placeholders::_1));
     velocity_publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("turret/cmd_vel", 10);
-    timer_ = this->create_wall_timer(std::chrono::milliseconds(static_cast<int>(controler->getDt()*1000)), std::bind(&TurretControlNode::controller_callback, this));
+
+    timer_ = this->create_wall_timer(std::chrono::milliseconds(static_cast<int>(controller->getDt() * 1000)), std::bind(&TurretControlNode::controller_callback, this));
   }
 
 private:
   void state_callback(const std_msgs::msg::Float32MultiArray &msg)
   { // To be added, message feedback processing
-    this->turret_state = msg;
+    this->y << msg.data[2], msg.data[5];
+    first_state_received=true;
   }
 
   void cmd_callback(const custom_msgs::msg::TurretCmd &msg)
   {
-    this->reference << msg.yaw, msg.pitch;
+    this->r << msg.yaw, msg.pitch;
+    controller->updateReference(this->r);
   }
 
   void controller_callback()
   {
-    Eigen::VectorXd commands=controler->run(reference);
-    
+    if (first_state_received)
+    {
+      auto msg = geometry_msgs::msg::Twist();
+      Eigen::VectorXd commands = controller->run(y);
+      msg.angular.z = commands[0];
+      msg.angular.y = commands[1];
+      this->velocity_publisher_->publish(msg);
+    }
+    return;
   }
 
-  std::unique_ptr<TurretController> controler;
+  std::unique_ptr<TurretController> controller;
   rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr state_subscription_;
   rclcpp::Subscription<custom_msgs::msg::TurretCmd>::SharedPtr cmd_subscription;
 
   rclcpp::TimerBase::SharedPtr timer_;
   rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr velocity_publisher_;
 
-  std_msgs::msg::Float32MultiArray turret_state;
-
-  Eigen::VectorXd reference;
+  Eigen::VectorXd r;
+  Eigen::VectorXd y;
+  bool first_state_received;
 };
 
 int main(int argc, char **argv)
 {
-  (void)argc;
-  (void)argv;
-  // rclcpp::init(argc, argv);
-  // rclcpp::spin(std::make_shared<turret_control>());
-  // rclcpp::shutdown();
+  rclcpp::init(argc, argv);
+  rclcpp::spin(std::make_shared<TurretControlNode>());
+  rclcpp::shutdown();
 
   return 0;
 }

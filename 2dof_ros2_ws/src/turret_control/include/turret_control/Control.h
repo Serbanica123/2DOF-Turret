@@ -104,6 +104,7 @@ public:
     Eigen::VectorXd run(const Eigen::VectorXd &y);
     double getDt();
     int getOutputNum();
+    void updateReference(const Eigen::VectorXd &r);
 private:
     StateSpace ss;
     std::shared_ptr<jsonRead> configReader;
