@@ -28,15 +28,17 @@ public:
 
 private:
   void state_callback(const std_msgs::msg::Float32MultiArray &msg)
-  { // To be added, message feedback processing
+  { 
     this->y << msg.data[2], msg.data[5];
     first_state_received=true;
+    RCLCPP_INFO(this->get_logger(), "State y: [%f, %f]", y[0], y[1]);
   }
 
   void cmd_callback(const custom_msgs::msg::TurretCmd &msg)
   {
     this->r << msg.yaw, msg.pitch;
     controller->updateReference(this->r);
+    RCLCPP_INFO(this->get_logger(), "Reference r: [%f, %f]", r[0], r[1]);
   }
 
   void controller_callback()
@@ -48,6 +50,7 @@ private:
       msg.angular.z = commands[0];
       msg.angular.y = commands[1];
       this->velocity_publisher_->publish(msg);
+      RCLCPP_INFO(this->get_logger(), "Commands u: [%f, %f]", commands[0], commands[1]);
     }
     return;
   }
