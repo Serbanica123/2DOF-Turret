@@ -31,7 +31,7 @@ private:
   { 
     this->y << msg.data[2], msg.data[5];
     first_state_received=true;
-    RCLCPP_INFO(this->get_logger(), "State y: [%f, %f]", y[0], y[1]);
+    //RCLCPP_INFO(this->get_logger(), "State y: [%f, %f]", y[0], y[1]);
   }
 
   void cmd_callback(const custom_msgs::msg::TurretCmd &msg)
@@ -47,10 +47,12 @@ private:
     {
       auto msg = geometry_msgs::msg::Twist();
       Eigen::VectorXd commands = controller->run(y);
-      msg.angular.z = commands[0];
-      msg.angular.y = commands[1];
+      msg.angular.z = commands[0]/10;
+      msg.angular.y = -commands[1]/10;
       this->velocity_publisher_->publish(msg);
       RCLCPP_INFO(this->get_logger(), "Commands u: [%f, %f]", commands[0], commands[1]);
+      RCLCPP_INFO(this->get_logger(), "Reference r: [%f, %f]", r[0], r[1]);
+      RCLCPP_INFO(this->get_logger(), "State y: [%f, %f]", y[0], y[1]);
     }
     return;
   }

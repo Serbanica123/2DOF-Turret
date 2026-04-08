@@ -1,6 +1,5 @@
 #include "turret_control/Control.h"
 
-
 Observer::Observer(std::shared_ptr<jsonRead> config, StateSpace &ss_ref) : configReader(config), ss(ss_ref)
 {
     this->L = configReader->readMatrix({"observer", "L"});
@@ -41,9 +40,13 @@ TurretController::TurretController()
 }
 Eigen::VectorXd TurretController::run(const Eigen::VectorXd &y)
 {
+
     Eigen::VectorXd x_hat = observer->estimate(u_prev, y);
+
     Eigen::VectorXd u = lqr->computeControls(x_hat);
+
     u_prev = u;
+
     return u;
 }
 
@@ -51,7 +54,7 @@ LQR::LQR(std::shared_ptr<jsonRead> config, StateSpace &ss_ref) : configReader(co
 {
     this->x_ss.setZero(ss.n);
     this->u_ss.setZero(ss.m);
-    this->K = configReader->readMatrix({"lqr", "k"});
+    this->K = configReader->readMatrix({"lqr", "K"});
 }
 
 void LQR::updateReference(const Eigen::VectorXd &r)
@@ -70,7 +73,7 @@ void LQR::updateReference(const Eigen::VectorXd &r)
 
 Eigen::VectorXd LQR::computeControls(const Eigen::VectorXd &x_hat)
 {
-    return u_ss - K*(x_hat - x_ss);
+    return u_ss - K * (x_hat - x_ss);
 }
 
 double TurretController::getDt()
