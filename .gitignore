@@ -1,3 +1,6 @@
 build/
 install/
 log/
+2dof_ros2_ws/build/
+2dof_ros2_ws/install/
+2dof_ros2_ws/log/

@@ -313,6 +313,9 @@ message(STATUS "Execute custom install script")
 # install("TARGETS" "position_controller" "DESTINATION" "lib/turret_control")
 include("/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/build/turret_control/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
+# install(DIRECTORY "launch" "DESTINATION" "share/turret_control")
+ament_cmake_symlink_install_directory("/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control" DIRECTORY "launch" "DESTINATION" "share/turret_control")
+
 # install(FILES "/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/build/turret_control/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/turret_control" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control" FILES "/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/build/turret_control/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/turret_control" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 

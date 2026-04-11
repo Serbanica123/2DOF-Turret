@@ -7,7 +7,8 @@
             },
             "includePath": [
                 "/opt/ros/humble/include/**",
-                "/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/**",
+                "${workspaceFolder}/2dof_ros2_ws/src/turret_control/include/**",
+                 "${workspaceFolder}/2dof_ros2_ws/src/turret_camera/include/**",
                 "/usr/include/**",
                 "${workspaceFolder}/install/custom_msgs/include",
                 "${workspaceFolder}/install/custom_msgs/include/custom_msgs"

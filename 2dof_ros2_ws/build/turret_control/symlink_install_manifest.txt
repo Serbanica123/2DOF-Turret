@@ -1,4 +1,5 @@
 /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/lib/turret_control/position_controller
+/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/launch/turret.launch.py
 /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/ament_index/resource_index/package_run_dependencies/turret_control
 /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/ament_index/resource_index/parent_prefix_path/turret_control
 /home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/install/turret_control/share/turret_control/environment/ament_prefix_path.sh
