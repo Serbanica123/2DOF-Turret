@@ -47,8 +47,8 @@ private:
     {
       auto msg = geometry_msgs::msg::Twist();
       Eigen::VectorXd commands = controller->run(y);
-      msg.angular.z = commands[0];
-      msg.angular.y = commands[1];
+      msg.angular.z = commands[1];
+      msg.angular.y = commands[0];
       this->velocity_publisher_->publish(msg);
       RCLCPP_INFO(this->get_logger(), "Commands u: [%f, %f, %f, %f]", commands[0], y[0], commands[1], y[1]);
     }

@@ -11,7 +11,7 @@ Camera::Camera(int id, double width, double height)
     running = true;
     cap.set(cv::CAP_PROP_FRAME_WIDTH, width);
     cap.set(cv::CAP_PROP_FRAME_HEIGHT, height);
-    cap.set(cv::CAP_PROP_FPS, 30);
+    cap.set(cv::CAP_PROP_FPS, 60);
 
     captureThread = std::thread(&Camera::captureLoop, this);
 }

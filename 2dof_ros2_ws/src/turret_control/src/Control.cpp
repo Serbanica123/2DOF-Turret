@@ -7,8 +7,12 @@ Observer::Observer(std::shared_ptr<jsonRead> config, StateSpace &ss_ref) : confi
     this->x_hat.setZero(ss.n);
 }
 
-Eigen::VectorXd &Observer::estimate(const Eigen::VectorXd &u, const Eigen::VectorXd &y)
+void Observer::init_obs(const Eigen::VectorXd &y)
+{
+    this->x_hat = ss.C.transpose() * (ss.C * ss.C.transpose()).inverse() * y;
+}
 
+Eigen::VectorXd &Observer::estimate(const Eigen::VectorXd &u, const Eigen::VectorXd &y)
 {
     if (u.size() != ss.m || y.size() != ss.p)
     {
@@ -31,6 +35,7 @@ TurretController::TurretController(const char *docName)
                  configReader->readMatrix({"model", "C"}),
                  configReader->readMatrix({"model", "D"}));
     observer = std::make_unique<Observer>(configReader, ss);
+    obs_init = false;
     lqr = std::make_unique<LQR>(configReader, ss);
     u_prev.setZero(ss.m);
 }
@@ -38,9 +43,16 @@ TurretController::TurretController(const char *docName)
 TurretController::TurretController()
 {
 }
+
 Eigen::VectorXd TurretController::run(const Eigen::VectorXd &y)
 {
 
+    if(!obs_init)
+    {
+        observer->init_obs(y);
+        obs_init=true;
+    }
+    
     Eigen::VectorXd x_hat = observer->estimate(u_prev, y);
 
     Eigen::VectorXd u = lqr->computeControls(x_hat);

@@ -71,7 +71,7 @@ class Observer
 public:
     Observer(std::shared_ptr<jsonRead> config, StateSpace &ss_ref);
     Eigen::VectorXd &estimate(const Eigen::VectorXd &u, const Eigen::VectorXd &y);
-
+    void init_obs(const Eigen::VectorXd &y);
 private:
     std::shared_ptr<jsonRead> configReader;
 
@@ -86,7 +86,6 @@ public:
     LQR(std::shared_ptr<jsonRead> config, StateSpace &ss_ref);
     void updateReference(const Eigen::VectorXd &r);
     Eigen::VectorXd computeControls(const Eigen::VectorXd &x_hat);
-
 private:
     std::shared_ptr<jsonRead> configReader;
     StateSpace &ss;
@@ -114,6 +113,7 @@ private:
     Eigen::VectorXd u_prev;
     Eigen::VectorXd last_reference;
 
+    bool obs_init;
 };
 
 #endif
