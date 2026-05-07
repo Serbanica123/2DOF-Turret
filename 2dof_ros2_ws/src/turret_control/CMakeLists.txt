@@ -6,6 +6,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 find_package(ament_cmake REQUIRED)
+find_package(ament_index_cpp REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(custom_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
@@ -16,6 +17,7 @@ add_executable(position_controller src/position_controller.cpp src/jsonRead.cpp 
 
 ament_target_dependencies(position_controller
   rclcpp
+  ament_index_cpp
   custom_msgs
   geometry_msgs
   std_msgs
@@ -38,6 +40,11 @@ install(TARGETS position_controller
 
 install(
   DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}
+)
+
+install(
+  DIRECTORY configs
   DESTINATION share/${PROJECT_NAME}
 )
 

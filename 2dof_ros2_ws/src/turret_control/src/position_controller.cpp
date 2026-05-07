@@ -9,13 +9,20 @@
 #include <geometry_msgs/msg/twist.hpp>
 #include <std_msgs/msg/float32_multi_array.hpp>
 #include <turret_control/Control.h>
+#include "ament_index_cpp/get_package_share_directory.hpp"
 
 class TurretControlNode : public rclcpp::Node
 {
 public:
   TurretControlNode() : Node("turret_control")
   {
-    controller = std::make_unique<TurretController>("/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/src/turret_control/lqr_observer_config.json");
+    std::string package_path =
+    ament_index_cpp::get_package_share_directory("turret_control");
+
+    std::string config_path =
+        package_path + "/configs/lqr_observer_config.json";
+
+controller = std::make_unique<TurretController>(config_path.c_str());
     r.setZero(controller->getOutputNum());
     y.setZero(controller->getOutputNum());
     first_state_received = false;
