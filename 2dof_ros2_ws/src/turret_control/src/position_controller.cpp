@@ -22,9 +22,11 @@ public:
     std::string config_path =
         package_path + "/configs/lqr_observer_config.json";
 
-controller = std::make_unique<TurretController>(config_path.c_str());
+    controller = std::make_unique<TurretController>(config_path.c_str());
+    
     r.setZero(controller->getOutputNum());
     y.setZero(controller->getOutputNum());
+
     first_state_received = false;
     state_subscription_ = this->create_subscription<std_msgs::msg::Float32MultiArray>("turret/state", 10, std::bind(&TurretControlNode::state_callback, this, std::placeholders::_1));
     cmd_subscription = this->create_subscription<custom_msgs::msg::TurretCmd>("turret/cmd_setpoint", 10, std::bind(&TurretControlNode::cmd_callback, this, std::placeholders::_1));
