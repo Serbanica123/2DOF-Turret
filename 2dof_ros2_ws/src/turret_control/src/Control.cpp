@@ -55,7 +55,7 @@ Eigen::VectorXd TurretController::run(const Eigen::VectorXd &y)
     
     Eigen::VectorXd x_hat = observer->estimate(u_prev, y);
 
-    Eigen::VectorXd u = lqr->computeControls(x_hat);
+    Eigen::VectorXd u = lqr->computeControls(x_hat, y);
 
     u_prev = u;
 
@@ -66,7 +66,10 @@ LQR::LQR(std::shared_ptr<jsonRead> config, StateSpace &ss_ref) : configReader(co
 {
     this->x_ss.setZero(ss.n);
     this->u_ss.setZero(ss.m);
+    this->r.setZero(ss.p);
+    this->z.setZero(ss.p);
     this->K = configReader->readMatrix({"lqr", "K"});
+    this->Ki = configReader->readMatrix({"lqr", "Ki"});
 }
 
 void LQR::updateReference(const Eigen::VectorXd &r)
@@ -81,11 +84,13 @@ void LQR::updateReference(const Eigen::VectorXd &r)
     Eigen::VectorXd sol = M.fullPivLu().solve(rhs);
     x_ss = sol.head(ss.n);
     u_ss = sol.tail(ss.m);
+    this->r=r;
 }
 
-Eigen::VectorXd LQR::computeControls(const Eigen::VectorXd &x_hat)
+Eigen::VectorXd LQR::computeControls(const Eigen::VectorXd &x_hat, const Eigen::VectorXd &y)
 {
-    return u_ss - K * (x_hat - x_ss);
+    this->z=this->z+ss.dt*(this->r-y);
+    return u_ss - K * (x_hat - x_ss)- Ki*z;
 }
 
 double TurretController::getDt()
