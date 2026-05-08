@@ -20,10 +20,10 @@ public:
     ament_index_cpp::get_package_share_directory("turret_control");
 
     std::string config_path =
-        package_path + "/configs/lqr_observer_config.json";
+        package_path + "/configs/lqi_first_design.json";
 
     controller = std::make_unique<TurretController>(config_path.c_str());
-    
+
     r.setZero(controller->getOutputNum());
     y.setZero(controller->getOutputNum());
 
