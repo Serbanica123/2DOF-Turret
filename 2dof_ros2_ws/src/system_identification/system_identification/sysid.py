@@ -10,8 +10,89 @@ from scipy.signal import chirp
 from geometry_msgs.msg import Twist
 from std_msgs.msg import Float32MultiArray
 
+def generate_prbs(
+    samples=2500,
+    dt=0.02,
+    A0=25,
+    switch_prob=0.35,
+    levels=None,
+    seed=None,
+    showPlot=False
+):
+    """
+    Generate a PRBS-like signal for system identification.
 
-def generate_chirp(samples=2500, dt=0.02, f0=0.1, f1=2.5, A0=10, vary=False, phi=90, showPlot=False):
+    Parameters
+    ----------
+    samples : int
+        Number of samples.
+
+    dt : float
+        Sampling time.
+
+    A0 : float
+        Default amplitude (+/- A0).
+
+    switch_prob : float
+        Probability of switching state at each sample.
+        Lower -> slower signal
+        Higher -> faster excitation
+
+    levels : list or None
+        Optional discrete levels.
+        Example:
+            [-10, 0, 10]
+        If None -> binary PRBS (+/-A0)
+
+    seed : int or None
+        Random seed.
+
+    showPlot : bool
+        Plot generated signal.
+
+    Returns
+    -------
+    u : ndarray
+        PRBS signal.
+
+    t : ndarray
+        Time vector.
+    """
+
+    if seed is not None:
+        np.random.seed(seed)
+
+    t = np.arange(samples) * dt
+
+    # Binary PRBS levels
+    if levels is None:
+        levels = [-A0, A0]
+
+    u = np.zeros(samples)
+
+    # Initial state
+    current = np.random.choice(levels)
+
+    for i in range(samples):
+
+        # Random switching
+        if np.random.rand() < switch_prob:
+            current = np.random.choice(levels)
+
+        u[i] = current
+
+    if showPlot:
+        plt.figure()
+        plt.plot(t, u)
+        plt.title("PRBS excitation")
+        plt.xlabel("Time [s]")
+        plt.ylabel("Amplitude")
+        plt.grid()
+
+    return u, t
+
+
+def generate_chirp(samples=2500, dt=0.02, f0=0.7, f1=1.75, A0=35, vary=False, phi=90, showPlot=False):
 
     t = np.arange(samples) * dt
 
@@ -91,7 +172,7 @@ class SYSID(Node):
         )
         self.subscription  # prevent unused variable warning
 
-        base_name = "full_log"
+        base_name = "chirp50Yaw_log"
 
         timestamp_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
@@ -112,9 +193,9 @@ class SYSID(Node):
             ]
         )
 
-        # self.inputYaw, _ =0.0, 0.0
-        # self.inputPitch, _= generate_chirp(samples=2500, dt=0.02, f0=0.1, f1=2.5, A0=15, vary=False, phi=90)
-        self.inputYaw, self.inputPitch, _= generate_mimo_noise()
+        self.inputYaw, _ =generate_chirp()
+        self.inputPitch, _= 0.0,0.0
+        # self.inputYaw, self.inputPitch, _= generate_mimo_noise()
         self.publisher_ = self.create_publisher(Twist, "turret/cmd_vel", 10)
 
         timer_period = 0.02  # seconds
@@ -124,7 +205,7 @@ class SYSID(Node):
     def timer_callback(self):
         msg = Twist()
 
-        if self.i < len(self.inputPitch):
+        if self.i < len(self.inputYaw):
             velPitch= self.inputPitch[self.i] if isinstance(self.inputPitch, (list, np.ndarray)) else 0.0
             velYaw=self.inputYaw[self.i] if isinstance(self.inputYaw, (list, np.ndarray)) else 0.0
             
@@ -149,7 +230,7 @@ class SYSID(Node):
         print(pitch_pos)
         
         #timestamp = self.get_clock().now().nanoseconds * 1e-9
-        if self.i < len(self.inputPitch):
+        if self.i < len(self.inputYaw):
             self.writer.writerow(
                 [self.i*0.02, cmd_yaw, yaw_pos, cmd_pitch, pitch_pos]
             )
