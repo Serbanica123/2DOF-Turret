@@ -20,7 +20,7 @@ public:
     ament_index_cpp::get_package_share_directory("turret_control");
 
     std::string config_path =
-        package_path + "/configs/lqi_first_design.json";
+        package_path + "/configs/lqi_damped_0.1.json";
 
     controller = std::make_unique<TurretController>(config_path.c_str());
 

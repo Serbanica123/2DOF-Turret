@@ -92,7 +92,6 @@ Eigen::VectorXd LQR::computeControls(const Eigen::VectorXd &x_hat, const Eigen::
     this->z=this->z+ss.dt*(this->r-y);
     return u_ss - K * (x_hat - x_ss)- Ki*z;
 }
-
 double TurretController::getDt()
 {
     return ss.dt;
