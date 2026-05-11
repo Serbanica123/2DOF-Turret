@@ -172,7 +172,7 @@ class SYSID(Node):
         )
         self.subscription  # prevent unused variable warning
 
-        base_name = "chirp50Yaw_log"
+        base_name = "chirp50FullInverted_log"
 
         timestamp_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
@@ -193,8 +193,8 @@ class SYSID(Node):
             ]
         )
 
-        self.inputYaw, _ =generate_chirp()
-        self.inputPitch, _= 0.0,0.0
+        self.inputYaw, _ = generate_chirp(samples=3000, dt=0.02, f0=0.25, f1=0.9, A0=25, vary=False, phi=90, showPlot=False)
+        self.inputPitch, _= generate_chirp(samples=3000, dt=0.02, f0=1, f1=1.65, A0=25, vary=False, phi=-90, showPlot=False)
         # self.inputYaw, self.inputPitch, _= generate_mimo_noise()
         self.publisher_ = self.create_publisher(Twist, "turret/cmd_vel", 10)
 
