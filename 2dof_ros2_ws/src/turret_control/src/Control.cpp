@@ -90,7 +90,7 @@ void LQR::updateReference(const Eigen::VectorXd &r)
 Eigen::VectorXd LQR::computeControls(const Eigen::VectorXd &x_hat, const Eigen::VectorXd &y)
 {
     this->z=this->z+ss.dt*(this->r-y);
-    return u_ss - K * (x_hat - x_ss)- Ki*z;
+    return u_ss - K * (x_hat - x_ss);
 }
 double TurretController::getDt()
 {
