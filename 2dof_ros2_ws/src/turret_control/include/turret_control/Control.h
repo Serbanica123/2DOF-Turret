@@ -85,11 +85,14 @@ class LQR
 public:
     LQR(std::shared_ptr<jsonRead> config, StateSpace &ss_ref);
     void updateReference(const Eigen::VectorXd &r);
-    Eigen::VectorXd computeControls(const Eigen::VectorXd &x_hat);
+    Eigen::VectorXd computeControls(const Eigen::VectorXd &x_hat, const Eigen::VectorXd &y);
 private:
     std::shared_ptr<jsonRead> configReader;
     StateSpace &ss;
     Eigen::MatrixXd K;
+    Eigen::MatrixXd Ki;
+    Eigen::VectorXd r;
+    Eigen::VectorXd z;
     Eigen::VectorXd x_ss;
     Eigen::VectorXd u_ss;
 
