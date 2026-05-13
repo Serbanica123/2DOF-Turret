@@ -1,1 +1,0 @@
-/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/build/custom_msgs/rosidl_generator_py/custom_msgs/msg/_turret_cmd_s.c

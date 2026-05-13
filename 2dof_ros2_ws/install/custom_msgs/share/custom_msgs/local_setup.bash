@@ -1,1 +1,0 @@
-/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/build/custom_msgs/ament_cmake_environment_hooks/local_setup.bash

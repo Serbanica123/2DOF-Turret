@@ -1,1 +1,0 @@
-/home/alex/Desktop/2DOF-Turret/2dof_ros2_ws/build/custom_msgs/rosidl_typesupport_introspection_cpp/custom_msgs/msg/detail/turret_cmd__rosidl_typesupport_introspection_cpp.hpp
