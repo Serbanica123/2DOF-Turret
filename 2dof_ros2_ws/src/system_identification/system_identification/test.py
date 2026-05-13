@@ -8,7 +8,7 @@ from control import StateSpace, forced_response
 from scipy.interpolate import interp1d
 from scipy.signal import butter, filtfilt
 
-def generate_chirp(samples=3000, dt=0.02, f0=0.6, f1=1.35, A0=25, vary=False, phi=90, showPlot=False):
+def generate_chirp(samples=2000, dt=0.035, f0=0.6, f1=1.35, A0=25, vary=False, phi=90, showPlot=False):
 
     t = np.arange(samples) * dt
 

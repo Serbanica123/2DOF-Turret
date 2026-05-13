@@ -106,61 +106,114 @@ def generate_chirp(samples=2500, dt=0.02, f0=0.7, f1=1.75, A0=35, vary=False, ph
         plt.plot(t, x_scaled)
 
     return x_scaled, t
-
+import scipy.signal as signal
 def generate_mimo_noise(
     samples=2500,
-    dt=0.02,
-    Ayaw=3.0,
-    Apitch=3.0,
-    alpha=0.97,
+    dt=0.035,
+    Ayaw=5.0,
+    Apitch=5.0,
+    alpha_yaw=0.90,
+    alpha_pitch=0.87,
+    alpha_dc=0.995,
+    clip=8.0,
     seed=None,
-    clip=5.0,
     showPlot=False
 ):
-    import scipy.signal as signal
+    """
+    Generate smooth MIMO excitation signals for turret system identification.
+
+    Inputs:
+        yaw velocity command   [deg/s]
+        pitch velocity command [deg/s]
+
+    Designed for:
+        - MIMO sysid
+        - closed-loop excitation
+        - velocity-input / position-output systems
+
+    Features:
+        - independent excitation channels
+        - colored broadband noise
+        - DC drift removal
+        - smooth saturation
+        - bounded position excursion
+    """
 
     if seed is not None:
         np.random.seed(seed)
 
     t = np.arange(samples) * dt
 
-    # 1. Raw white noise (independent axes)
+    # ---------------------------------------------------------
+    # 1. Independent white noise
+    # ---------------------------------------------------------
+
     yaw_raw = np.random.randn(samples)
     pitch_raw = np.random.randn(samples)
 
-    # 2. Color the noise (low-pass filter)
-    yaw = signal.lfilter([1], [1, -alpha], yaw_raw)
-    pitch = signal.lfilter([1], [1, -alpha], pitch_raw)
+    # ---------------------------------------------------------
+    # 2. Color the noise (1st-order low-pass)
+    # ---------------------------------------------------------
 
-    # 3. Normalize
-    yaw = yaw / np.std(yaw)
-    pitch = pitch / np.std(pitch)
+    yaw = signal.lfilter([1], [1, -alpha_yaw], yaw_raw)
+    pitch = signal.lfilter([1], [1, -alpha_pitch], pitch_raw)
 
-    # 4. Scale to velocity amplitudes (deg/s)
+    # ---------------------------------------------------------
+    # 3. Remove slow drift / DC component
+    # ---------------------------------------------------------
+
+    yaw_dc = signal.lfilter([1 - alpha_dc], [1, -alpha_dc], yaw)
+    pitch_dc = signal.lfilter([1 - alpha_dc], [1, -alpha_dc], pitch)
+
+    yaw = yaw - yaw_dc
+    pitch = pitch - pitch_dc
+
+    # ---------------------------------------------------------
+    # 4. Normalize RMS
+    # ---------------------------------------------------------
+
+    yaw = yaw / np.sqrt(np.mean(yaw**2))
+    pitch = pitch / np.sqrt(np.mean(pitch**2))
+
+    # ---------------------------------------------------------
+    # 5. Scale amplitudes
+    # ---------------------------------------------------------
+
     yaw = Ayaw * yaw
     pitch = Apitch * pitch
 
-    # 5. Safety clipping (important for real motors)
-    yaw = np.clip(yaw, -clip, clip)
-    pitch = np.clip(pitch, -clip, clip)
+    # ---------------------------------------------------------
+    # 6. Smooth saturation (better than hard clipping)
+    # ---------------------------------------------------------
 
-    # 6. Plot if needed
+    yaw = clip * np.tanh(yaw / clip)
+    pitch = clip * np.tanh(pitch / clip)
+
+    # ---------------------------------------------------------
+    # 7. Optional plots
+    # ---------------------------------------------------------
+
     if showPlot:
-        plt.figure()
 
-        plt.subplot(2,1,1)
+        plt.figure(figsize=(12, 6))
+
+        plt.subplot(2, 1, 1)
         plt.plot(t, yaw)
-        plt.title("Yaw velocity noise (deg/s)")
-        plt.grid()
+        plt.title("Yaw Velocity Excitation")
+        plt.ylabel("deg/s")
+        plt.grid(True)
 
-        plt.subplot(2,1,2)
+        plt.subplot(2, 1, 2)
         plt.plot(t, pitch)
-        plt.title("Pitch velocity noise (deg/s)")
-        plt.grid()
+        plt.title("Pitch Velocity Excitation")
+        plt.ylabel("deg/s")
+        plt.xlabel("Time [s]")
+        plt.grid(True)
 
         plt.tight_layout()
+        plt.show()
 
-    return yaw, pitch , t
+    return yaw, pitch, t
 
 
 class SYSID(Node):
@@ -172,7 +225,7 @@ class SYSID(Node):
         )
         self.subscription  # prevent unused variable warning
 
-        base_name = "chirp50FullInverted_log"
+        base_name = "PRBS_exp_yaw"
 
         timestamp_str = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
 
@@ -193,19 +246,20 @@ class SYSID(Node):
             ]
         )
 
-        self.inputYaw, _ = generate_chirp(samples=3000, dt=0.02, f0=0.25, f1=0.9, A0=25, vary=False, phi=90, showPlot=False)
-        self.inputPitch, _= generate_chirp(samples=3000, dt=0.02, f0=1, f1=1.65, A0=25, vary=False, phi=-90, showPlot=False)
-        # self.inputYaw, self.inputPitch, _= generate_mimo_noise()
+        #self.inputYaw, _ = generate_chirp(samples=1500, dt=0.035, f0=0.25, f1=0.9, A0=25, vary=False, phi=90, showPlot=False)
+        #self.inputPitch, _= generate_chirp(samples=1500, dt=0.035, f0=1, f1=1.65, A0=25, vary=False, phi=-90, showPlot=False)
+        self.inputYaw, self.inputPitch, _= generate_mimo_noise(samples=4000,dt=0.035,Ayaw=6,Apitch=5,clip=8,seed=1,showPlot=False)
+        self.inputYaw=0.0
         self.publisher_ = self.create_publisher(Twist, "turret/cmd_vel", 10)
-
-        timer_period = 0.02  # seconds
+        self.log_list=[]
+        timer_period = 0.035  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.i = 0
 
     def timer_callback(self):
         msg = Twist()
 
-        if self.i < len(self.inputYaw):
+        if self.i < len(self.inputPitch):
             velPitch= self.inputPitch[self.i] if isinstance(self.inputPitch, (list, np.ndarray)) else 0.0
             velYaw=self.inputYaw[self.i] if isinstance(self.inputYaw, (list, np.ndarray)) else 0.0
             
@@ -227,16 +281,14 @@ class SYSID(Node):
         yaw_pos = data[2]
         cmd_pitch = data[0]
         pitch_pos = data[5]
-        print(pitch_pos)
-        
-        #timestamp = self.get_clock().now().nanoseconds * 1e-9
-        if self.i < len(self.inputYaw):
-            self.writer.writerow(
-                [self.i*0.02, cmd_yaw, yaw_pos, cmd_pitch, pitch_pos]
-            )
-            self.csvfile.flush()
+
+        timestamp = self.get_clock().now().nanoseconds * 1e-9
+        if self.i < len(self.inputPitch):
+            self.log_list.append([timestamp, cmd_yaw, yaw_pos, cmd_pitch, pitch_pos])
         else:
-            self.csvfile.close()
+            if not self.csvfile.closed:
+                self.writer.writerows(self.log_list)
+                self.csvfile.close()
             
     def destroy_node(self):
         self.csvfile.close()
