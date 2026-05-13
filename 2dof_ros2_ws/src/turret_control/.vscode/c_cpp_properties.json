@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/alex/Turret/2DOF-Turret/install/turret_camera/include/**",
+        "/home/alex/Turret/2DOF-Turret/install/custom_msgs/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/alex/Turret/2DOF-Turret/2dof_ros2_ws/src/turret_control/include/**",
+        "include/**",
+        "/usr/include/**"
+      ],
+      "name": "ros2",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++17"
+    }
+  ],
+  "version": 4
+}

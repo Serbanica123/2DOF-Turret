@@ -1,0 +1,19 @@
+{
+    "ROS2.distro": "humble",
+    "python.autoComplete.extraPaths": [
+        "/home/alex/Turret/2DOF-Turret/2dof_ros2_ws/src/system_identification/install/system_identification/lib/python3.10/site-packages",
+        "/home/alex/Turret/2DOF-Turret/build/system_identification",
+        "/home/alex/Turret/2DOF-Turret/install/system_identification/lib/python3.10/site-packages",
+        "/home/alex/Turret/2DOF-Turret/install/custom_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/alex/Turret/2DOF-Turret/2dof_ros2_ws/src/system_identification/install/system_identification/lib/python3.10/site-packages",
+        "/home/alex/Turret/2DOF-Turret/build/system_identification",
+        "/home/alex/Turret/2DOF-Turret/install/system_identification/lib/python3.10/site-packages",
+        "/home/alex/Turret/2DOF-Turret/install/custom_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
